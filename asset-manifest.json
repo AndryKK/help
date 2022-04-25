@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/AndryKK/testUsers.git/static/css/main.073c9b0a.css",
-    "main.js": "/AndryKK/testUsers.git/static/js/main.d678f26e.js",
+    "main.css": "/AndryKK/testUsers.git/static/css/main.ef14cfbd.css",
+    "main.js": "/AndryKK/testUsers.git/static/js/main.6572f820.js",
     "static/js/787.28cb0dcd.chunk.js": "/AndryKK/testUsers.git/static/js/787.28cb0dcd.chunk.js",
-    "static/media/logo.svg": "/AndryKK/testUsers.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/AndryKK/testUsers.git/index.html",
-    "main.073c9b0a.css.map": "/AndryKK/testUsers.git/static/css/main.073c9b0a.css.map",
-    "main.d678f26e.js.map": "/AndryKK/testUsers.git/static/js/main.d678f26e.js.map",
+    "main.ef14cfbd.css.map": "/AndryKK/testUsers.git/static/css/main.ef14cfbd.css.map",
+    "main.6572f820.js.map": "/AndryKK/testUsers.git/static/js/main.6572f820.js.map",
     "787.28cb0dcd.chunk.js.map": "/AndryKK/testUsers.git/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.d678f26e.js"
+    "static/css/main.ef14cfbd.css",
+    "static/js/main.6572f820.js"
   ]
 }
