@@ -18,12 +18,12 @@ export function Item({ item }) {
               <div className="App__appartments">
                 <div className="App__item"><text className="App__text">{data.text}</text>
                   <>
-                    {data.buttons.map(button => (
+                    {(data.buttons.length !== 0) && (data.buttons.map(button => (
                       <a className="App__link" href={button.link}>
                         <button className="App__buttonLink">{button.title}</button>
                       </a>
                     )
-                    )}
+                    ))}
                   </>
                 </div>
               </div>

@@ -4,10 +4,12 @@
   margin: 2.5vh auto;
   min-height: 95vh;
   box-sizing: border-box;
-  font-family: 'Verdana, sans-serif';
+  // font-family: 'Verdana, sans-serif';
+  font-family: 'Mariupol';
 
 
   h1 {
+    font-family: 'Mariupol';
     @media (max-width: 768px)  {
       font-size: 20px;
     }
@@ -108,7 +110,7 @@
     font-family: 'Verdana, sans-serif';
     font-size: 18px;
     font-weight: 600;
-    height: 40px;
+    min-height: 40px;
     margin: 3px;
     background-color: #a6d1d8;
     border: 1px black solid;
