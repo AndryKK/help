@@ -1,0 +1,319 @@
+[
+  {
+    "title": "Житло",
+    "data": [
+      {
+        "text": "Наявність житла для переселенців:",
+        "buttons": 
+          [
+            {
+              "title": "Контакти",
+              "link": "https://cutt.ly/rF2uibF"
+            }
+          ]
+      },
+      {
+        "text": "Оренда квартир м. Рівного на довгий період проживання від 3800 до 13000 грн:",
+        "buttons": 
+          [
+            {
+              "title": "Переглянути варіанти",
+              "link": "https://cutt.ly/HFVYelY"
+            }
+          ]
+      },
+      {
+        "text": "Окрема кімната без/з проживанням власника, також одно- і двокімнатні квартири від 1 000 до 9 630 грн:",
+        "buttons": 
+          [
+            {
+              "title": "Переглянути варіанти",
+              "link": "https://cutt.ly/rFVU4C1"
+            }
+          ]
+      },
+      {
+        "text": "Довготривале житло, оренда одно-, дво- та трикімнатних квартир від 1600 грн/м",
+        "buttons": 
+          [
+            {
+              "title": "Переглянути варіанти",
+              "link": "https://cutt.ly/oFVPcmw"
+            }
+          ]
+      },
+      {
+        "text": "Гаряча лінія ГУ Національної соціальної сервісної служби у Рівненській області для вимушено евакуйованих і тих, хто хоче запропонувати житло (0362) 400 100 або 098-505-83-25, 097-008-81-91.",
+        "buttons": 
+          [
+            {
+              "title": "(0362) 400 100",
+              "link": "tel:+38-0362-400-100"
+            },
+            {
+              "title": "097-008-81-91",
+              "link": "tel:+38-097-008-81-91"
+            },
+            {
+              "title": "098-505-83-25",
+              "link": "tel:+38-098-505-83-25"
+            }
+          ]
+      },
+      {
+        "text": "Пошук житла для тимчасового проживання: чат-бот в Telegram  @UA_refugee_bot.",
+        "buttons": 
+          [
+            {
+              "title": "Telegram чат-бот",
+              "link": "https://t.me/UA_refugee_bot"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Реєестрація",
+    "data": 
+    [
+      {
+        "text": "Реєстрація внутрішньо переміщених осіб:",
+        "buttons": 
+          [
+            {
+              "title": "Інформація про реєстрацію",
+              "link": "https://rivnerada.gov.ua/vpo/vpo/registration"
+            }
+          ]
+      },
+
+      {
+        "text": "Компенсація витрат за тимчасове розміщення внутрішньо переміщених осіб, які перемістилися у період воєнного стану",
+        "buttons": 
+          [
+            {
+              "title": "Отримаати інформацію",
+              "link": "https://rivnerada.gov.ua/vpo/view-content/13695"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  },
+
+  {
+    "title": "Option",
+    "data": [
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      },
+
+      {
+        "text": "text",
+        "buttons": 
+          [
+            {
+              "title": "button title",
+              "link": "https://google.com"
+            }
+          ]
+      }
+    ]
+  }
+]
