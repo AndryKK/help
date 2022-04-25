@@ -16,7 +16,7 @@ export function Item({ item }) {
           {item.data.map(data => (
             <>
               <div className="App__appartments">
-                <div className="App__item"><text className="App__text">{data.text}</text>
+                <div className="App__item"><text className="App__text"><span className="App__text__text">{data.text}</span></text>
                   <>
                     {(data.buttons.length !== 0) && (data.buttons.map(button => (
                       <a className="App__link" href={button.link}>
