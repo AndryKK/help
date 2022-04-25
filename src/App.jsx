@@ -2,7 +2,7 @@ import './App.scss';
 import { Item } from './Item';
 import fromServer from './fromServer.json'
 import { useEffect, useState } from 'react';
-import { optionsfromServer } from './api';
+// import { optionsfromServer } from './api';
 
 
 function App() {
