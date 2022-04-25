@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export function Item({ item }) {
   const [apartament, setApartament] = useState(false);
-  console.log(item.data);
+
   return (
     <>
       <button
@@ -19,7 +19,7 @@ export function Item({ item }) {
                 <div className="App__item"><text className="App__text"><span className="App__text__text">{data.text}</span></text>
                   <>
                     {(data.buttons.length !== 0) && (data.buttons.map(button => (
-                      <a className="App__link" href={button.link}>
+                      <a key={Math.random()}  className="App__link" href={button.link}>
                         <button className="App__buttonLink">{button.title}</button>
                       </a>
                     )

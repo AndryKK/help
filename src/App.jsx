@@ -23,9 +23,13 @@ function App() {
   return (
     <div className="App">
       <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
+      <h4>(м. Рівне, Рівненська область)</h4>
       <div className="App__container">
         {items.map( item => (
-          <Item item={item}/>
+          <Item
+           key={Math.random()}
+           item={item}
+          />
         ))}
       </div>
     </div>
