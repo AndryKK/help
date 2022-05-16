@@ -18,9 +18,9 @@ export function Item({ item }) {
               <div className="App__appartments">
                 <div className="App__item">
                   <text className="App__text">
-                    <span className="App__text__text">
-                      {data.text}
-                    </span>
+                    <div className="App__text__text">
+                      {data.text.map(text => <p style={{"text-indent": "25px"}}>{text}</p>)}
+                    </div>
                   </text>
                   <>
                     {(data.buttons.length !== 0) && (data.buttons.map(button => (
