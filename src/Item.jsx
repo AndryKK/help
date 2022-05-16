@@ -19,7 +19,7 @@ export function Item({ item }) {
                 <div className="App__item">
                   <text className="App__text">
                     <div className="App__text__text">
-                      {data.text.map(text => <p style={{"text-indent": "25px"}}>{text}</p>)}
+                      {data.text.map(text => <p key={Math.random()} style={{"textIndent": "25px"}}>{text}</p>)}
                     </div>
                   </text>
                   <>
