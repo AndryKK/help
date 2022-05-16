@@ -14,14 +14,17 @@ export function Item({ item }) {
       {apartament && (
         <>
           {item.data.map(data => (
-            <>
+            <div key={Math.random()}>
               <div className="App__appartments">
                 <div className="App__item">
-                  <text className="App__text">
+                  <div className="App__text">
                     <div className="App__text__text">
-                      {data.text.map(text => <p key={Math.random()} style={{"textIndent": "25px"}}>{text}</p>)}
+                      {data.text.map(text =>
+                        <p key={Math.random()}
+                        style={{"textIndent": "25px"}}>{text}</p>
+                      )}
                     </div>
-                  </text>
+                  </div>
                   <>
                     {(data.buttons.length !== 0) && (data.buttons.map(button => (
                       <a key={Math.random()}
@@ -36,7 +39,7 @@ export function Item({ item }) {
                   </>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </>
       )}
