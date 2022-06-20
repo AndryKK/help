@@ -33,7 +33,7 @@ function App() {
   
 
   return (
-    <div className="App" style={(active.lengt  && (window.innerWidth > 1024)) ? {width: "1024px"} : {}}>
+    <div className="App" style={(active.length > 0) ? {width: "1024px"} : {}}>
       <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
       <h4>(м. Рівне, Рівненська область)</h4>
       <span>Пошук: </span>
