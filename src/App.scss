@@ -4,7 +4,7 @@ $light-blue: #e3f9fc;
 
 .App {
   display: block;
-  max-width: 768px;
+  max-width: 90vw;
   margin: 2.5vh auto;
   min-height: 95vh;
   box-sizing: border-box;
@@ -20,7 +20,7 @@ $light-blue: #e3f9fc;
   h1 {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    @media (max-width: 768px)  {
+    @media (max-width: 1024px)  {
       font-size: 20px;
     }
   }
@@ -31,7 +31,7 @@ $light-blue: #e3f9fc;
     padding: 0;
   }
 
-  @media (max-width: 768px)  {
+  @media (max-width: 1024px)  {
     width: 100%;
     border-radius: 0;
     margin: 0 auto;
@@ -48,22 +48,31 @@ $light-blue: #e3f9fc;
 
   &__container {
     display: flex;
+    flex-wrap: wrap;
+    height: 700px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
     margin: 40px auto 0;
     gap: 20px;
-    @media (max-width: 768px)  {
+
+    @media (max-width: 1280px)  {
+      height: 1200px;
+    }
+
+    @media (max-width: 1024px)  {
+      height: max-content;
       gap: 10px;
       margin: 10px auto 0;
     }
 
+
     &__button {
-      width: 100%;
-      min-height: 20px;
+      width: 220px;
+      height: 220px;
       background-color: $blue;
       color: #ffffff;
-      text-shadow: 0 0 2px #000000, 0 0 2px #000000;
+      text-shadow: 0 0 3px #000000, 0 0 3px #000000;
 
       font-family: 'Open Sans', sans-serif;
       font-size: 24px;
@@ -71,7 +80,10 @@ $light-blue: #e3f9fc;
 
       min-height: 40px;
 
-      @media (max-width: 768px)  {
+      @media (max-width: 1024px)  {
+        width: 100%;
+        height: max-content;
+        min-height: 20px;
         font-size: 18px;
       }
 
@@ -80,7 +92,7 @@ $light-blue: #e3f9fc;
       transition-duration: 0.3s;
 
       &:hover {
-        @media (min-width: 768px)  {
+        @media (min-width: 1024px)  {
           transform: scale(1.2);
         }
 
@@ -100,7 +112,7 @@ $light-blue: #e3f9fc;
     &__text {
       text-align: justify;
     }
-    @media (max-width: 768px)  {
+    @media (max-width: 1024px)  {
       font-size: 18px;
     }
   }
@@ -112,22 +124,17 @@ $light-blue: #e3f9fc;
     text-align: justify;
     gap: 20px;
     padding: 5px;
-    @media (max-width: 768px)  {
+    @media (max-width: 1024px)  {
       padding: 2px;
     }
-    @media (min-width: 480px)  {
-      min-width: 460px;
-    }
-    @media (min-width: 520px)  {
-      min-width: 480px;
-    }
+
 
     background-color: $blue;
     border: 1px black solid;
     border-radius: 10px;
 
     font-size: 24px;
-    @media (max-width: 768px)  {
+    @media (max-width: 1024px)  {
       font-size: 18px;
     }
   }
@@ -143,14 +150,17 @@ $light-blue: #e3f9fc;
     background-color: #a6d1d8;
     border: 1px black solid;
     transition-duration: 0.3s;
-    @media (max-width: 768px)  {
+
+    @media (max-width: 1024px)  {
       font-size: 16px;
     }
+
     &:hover {
       border: 2px #dad5d5 solid;
       background-color: #e3f9fc;
+
       &:hover {
-        @media (min-width: 768px)  {
+        @media (min-width: 1024px)  {
           transform: scale(1.2);
         }
       }
@@ -161,7 +171,7 @@ $light-blue: #e3f9fc;
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     background-image: url("https://www.vinnitsa.info/f/images/2022/03/12/87265/846c300a15497dd49042f77ae6ae2819_preview_w440_h290.jpg");
     background-position: center;
     background-attachment:fixed;

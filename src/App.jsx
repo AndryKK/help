@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 function App() {
   const [items, setItems] = useState([]);
   const [itemsCopy, setItemsCopy] = useState([]);
+  const [active, setActive] = useState("")
+  const [apartament, setApartament] = useState(false);
 
   const getData = async () => {
     // const data = await optionsfromServer();
@@ -31,18 +33,28 @@ function App() {
   
 
   return (
-    <div className="App">
+    <div className="App" style={(active.lengt  && (window.innerWidth > 1024)) ? {width: "1024px"} : {}}>
       <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
       <h4>(м. Рівне, Рівненська область)</h4>
       <span>Пошук: </span>
       <input onChange={handleChange} type="text" />
-      <div className="App__container">
-        {items.map( item => (
+      <div
+        className="App__container"
+        style={(active.length  && (window.innerWidth > 1024)) ? {height: "min-content", width: "800px"} : {}}
+      >
+        {items.map( item =>
+        (active.length === 0 || active === item.title)
+        ? (
           <Item
-           key={Math.random()}
-           item={item}
+            apartament={apartament}
+            setApartament={setApartament}
+            active={active}
+            setActive={setActive}
+            key={Math.random()}
+            item={item}
           />
-        ))}
+        )
+        : null)}
       </div>
     </div>
   );
