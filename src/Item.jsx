@@ -51,7 +51,7 @@ export function Item({ item, apartament, setApartament, setActive, active }) {
                     )}
                   </div>
                 </div>
-                <div style={{"width": "300px", "margin": "0 auto"}}>
+                <div style={{"width": "250px", "margin": "0 auto"}}>
                   {(data.buttons.length !== 0) && (data.buttons.map(button => (
                     <a key={Math.random()}
                         className="App__link" 
