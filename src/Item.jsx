@@ -5,7 +5,7 @@ export function Item({ item, apartament, setApartament, setActive, active }) {
     <>
       <button
         className='App__container__button'
-        style={(active.length && (window.innerWidth > 1024)) ? {"width": "100%", height: "min-content"} : {}}
+        style={(active.length && (window.innerWidth > 1024)) ? {"width": "300px", height: "min-content"} : {}}
         onClick={() => {
           setApartament(!apartament);
           setActive(item.title);
@@ -36,7 +36,7 @@ export function Item({ item, apartament, setApartament, setActive, active }) {
               alt="icon"
             />
           )}
-        {(!active.length) ? <div className={(window.innerWidth > 1024) && 'App__container__button__text'}>{item.title}</div> : "<< Назад"}
+        {(!active.length) ? <div className={(window.innerWidth > 1024) && 'App__container__button__text'}>{item.title}</div> : <div style={{"font-size": "18px"}}>{"<< Назад"}</div>}
       </button>
       {apartament && (
         <>
@@ -51,18 +51,20 @@ export function Item({ item, apartament, setApartament, setActive, active }) {
                     )}
                   </div>
                 </div>
-                <>
+                <div style={{"width": "300px", "margin": "0 auto"}}>
                   {(data.buttons.length !== 0) && (data.buttons.map(button => (
                     <a key={Math.random()}
                         className="App__link" 
                         href={button.link}
                     >
-                      <button className="App__buttonLink">
+                      <button 
+                        className="App__buttonLink"
+                      >
                         {button.title}
                       </button>
                     </a>
                   )))}
-                </>
+                </div>
               </div>
             </div>
           ))}
