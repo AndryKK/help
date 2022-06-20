@@ -36,25 +36,26 @@ function App() {
     <div className="App" style={(active.length > 0  && (window.innerWidth > 1024)) ? {width: "1024px"} : {}}>
       <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
       <h4>(м. Рівне, Рівненська область)</h4>
-      <span>Пошук: </span>
-      <input onChange={handleChange} type="text" />
+      <span className="search__text">Пошук: </span>
+      <input className="search__input" onChange={handleChange} type="text" />
       <div
         className="App__container"
         style={(active.length  && (window.innerWidth > 1024)) ? {height: "min-content", width: "800px"} : {}}
       >
         {items.map( item =>
-        (active.length === 0 || active === item.title)
-        ? (
-          <Item
-            apartament={apartament}
-            setApartament={setApartament}
-            active={active}
-            setActive={setActive}
-            key={Math.random()}
-            item={item}
-          />
-        )
-        : null)}
+          (active.length === 0 || active === item.title)
+          ? (
+            <Item
+              apartament={apartament}
+              setApartament={setApartament}
+              active={active}
+              setActive={setActive}
+              key={Math.random()}
+              item={item}
+            />
+          )
+          : null)
+        }
       </div>
     </div>
   );
