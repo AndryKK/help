@@ -18,6 +18,15 @@ function App() {
     setItemsCopy(data);
   }
 
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 1050 && window.innerWidth > 900) {
+        window.location.reload()
+      }
+    } 
+    window.addEventListener('resize', handleResize)
+  })
+
  useEffect(()=> {
   getData();
   }, [])
@@ -33,14 +42,14 @@ function App() {
   
 
   return (
-    <div className="App" style={(active.length > 0  && (window.innerWidth > 1024)) ? {width: "1024px"} : {}}>
+    <div className="App" style={(active.length > 0) ? (((window.innerWidth > 1024)) ? {width: "1024px"} : {}) : {}}>
       <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
       <h4>(м. Рівне, Рівненська область)</h4>
       <span className="search__text">Пошук: </span>
       <input className="search__input" onChange={handleChange} type="text" />
       <div
         className="App__container"
-        style={(active.length  && (window.innerWidth > 1024)) ? {height: "min-content", width: "800px"} : {}}
+        style={(active.length) ? (((window.innerWidth > 1024)) ? {height: "min-content", width: "800px"} : {}) : {}}
       >
         {items.map( item =>
           (active.length === 0 || active === item.title)

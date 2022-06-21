@@ -5,7 +5,7 @@ export function Item({ item, apartament, setApartament, setActive, active }) {
     <>
       <button
         className='App__container__button'
-        style={(active.length && (window.innerWidth > 1024)) ? {"width": "300px", height: "min-content"} : {}}
+        style={(active.length ? (((window.innerWidth > 1024)) ? {"width": "300px", height: "min-content"} : {}) : {})}
         onClick={() => {
           setApartament(!apartament);
           setActive(item.title);
@@ -16,7 +16,9 @@ export function Item({ item, apartament, setApartament, setActive, active }) {
       >
         {(!active.length && (window.innerWidth > 1024)) 
           && (
-            <img className='App__container__button__img'
+            <img
+              style={(item.title === "Психологічна допомога") ? {width: "85px"} : {}} 
+              className='App__container__button__img'
               src={(item.title === "Житло") ? "http://cdn.onlinewebfonts.com/svg/img_67240.png"
                 : (item.title === "Гуманітарна допомога (продукти)") ? "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Food_Bank_icon.svg/2048px-Food_Bank_icon.svg.png"
                 : (item.title === "Реєстрація") ? "http://cdn.onlinewebfonts.com/svg/img_180671.png"
@@ -36,7 +38,7 @@ export function Item({ item, apartament, setApartament, setActive, active }) {
               alt="icon"
             />
           )}
-        {(!active.length) ? <div className={(window.innerWidth > 1024) && 'App__container__button__text'}>{item.title}</div> : <div style={{"font-size": "18px"}}>{"<< Назад"}</div>}
+        {(!active.length) ? <div className={(window.innerWidth > 1024) ? ('App__container__button__text') : {}}>{item.title}</div> : <div style={{"fontSize": "18px"}}>{"<< Назад"}</div>}
       </button>
       {apartament && (
         <>
