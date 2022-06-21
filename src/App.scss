@@ -236,6 +236,13 @@ $light-blue: #e3f9fc;
   }
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 20px;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;

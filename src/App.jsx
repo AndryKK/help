@@ -45,8 +45,12 @@ function App() {
     <div className="App" style={(active.length > 0) ? (((window.innerWidth > 1024)) ? {width: "1024px"} : {}) : {}}>
       <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
       <h4>(м. Рівне, Рівненська область)</h4>
-      <span className="search__text">Пошук: </span>
-      <input className="search__input" onChange={handleChange} type="text" />
+      {active.length === 0 && (
+        <div>
+          <span className="search__text">Пошук: </span>
+          <input className="search__input" onChange={handleChange} type="text" />
+        </div>
+      )}
       <div
         className="App__container"
         style={(active.length) ? (((window.innerWidth > 1024)) ? {height: "min-content", width: "800px"} : {}) : {}}
@@ -66,6 +70,8 @@ function App() {
           : null)
         }
       </div>
+      <footer className='footer'>
+      </footer>
     </div>
   );
 }
