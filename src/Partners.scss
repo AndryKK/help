@@ -1,0 +1,228 @@
+$primary-blue: #60ade4;
+$light-blue: #e3f9fc;
+$accent-blue: #4a9bc7;
+$white: #ffffff;
+$dark-text: #2c3e50;
+$light-text: #6c757d;
+$shadow: rgba(0, 0, 0, 0.1);
+$gradient: linear-gradient(135deg, #60ade4 0%, #4a9bc7 100%);
+
+.partners-banner {
+  width: 100%;
+  margin: 20px 0;
+  background: rgb(7, 7, 144);
+  border-radius: 12px;
+  border: 1px solid rgba(96, 173, 228, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    margin: 15px 0;
+    border-radius: 10px;
+  }
+
+  &__content {
+    padding: 0;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+
+    @media (max-width: 768px) {
+      padding: 12px 15px;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      gap: 8px;
+    }
+  }
+
+  &__label {
+    font-size: 0.85rem;
+    color: $light-text;
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $primary-blue;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    color: $accent-blue;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 768px) {
+      align-self: flex-end;
+      margin-top: -30px;
+    }
+  }
+
+  &__link {
+    background: $gradient;
+    color: $white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(96, 173, 228, 0.3);
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(96, 173, 228, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+  }
+
+  &__toggle {
+    background: rgba(96, 173, 228, 0.1);
+    border: 1px solid rgba(96, 173, 228, 0.3);
+    color: $primary-blue;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+
+    &:hover {
+      background: rgba(96, 173, 228, 0.2);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      width: 28px;
+      height: 28px;
+      font-size: 0.7rem;
+    }
+  }
+
+  &__details {
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid rgba(96, 173, 228, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+    animation: slideDown 0.3s ease;
+
+    @media (max-width: 768px) {
+      padding: 0 15px 15px 15px;
+    }
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    color: $dark-text;
+    line-height: 1.5;
+    margin: 15px 0;
+
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+      margin: 12px 0;
+    }
+  }
+
+  &__services {
+    h4 {
+      font-size: 1rem;
+      color: $dark-text;
+      margin: 15px 0 10px 0;
+      font-weight: 600;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        margin: 12px 0 8px 0;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+
+    li {
+      font-size: 0.85rem;
+      color: $dark-text;
+      padding: 8px 12px;
+      background: rgba(96, 173, 228, 0.05);
+      border-radius: 6px;
+      border-left: 3px solid $primary-blue;
+
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Remove unused styles - these were from the old large card design

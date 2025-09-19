@@ -1,5 +1,6 @@
 import './App.scss';
 import { Item } from './Item';
+import { Partners } from './Partners';
 import fromServer from './fromServer.json'
 import { useEffect, useState } from 'react';
 // import { optionsfromServer } from './api';
@@ -23,54 +24,64 @@ function App() {
       if (window.innerWidth < 1050 && window.innerWidth > 900) {
         window.location.reload()
       }
-    } 
+    }
     window.addEventListener('resize', handleResize)
   })
 
- useEffect(()=> {
-  getData();
+  useEffect(() => {
+    getData();
   }, [])
 
- useEffect(()=> {
+  useEffect(() => {
   }, [items])
 
-  const handleChange =(e)=> {
+  const handleChange = (e) => {
     const filteredItems = itemsCopy.filter(i => i.data.some(topic => topic.text.join(" ").toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()) === true));
     setItems(filteredItems)
   }
-  
-  
+
+
 
   return (
-    <div className="App" style={(active.length > 0) ? (((window.innerWidth > 1024)) ? {width: "1024px"} : {}) : {}}>
-      <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
-      <h4>(м. Рівне, Рівненська область)</h4>
+    <div className="App">
+      <div className="App__header fade-in">
+        <h1>ДОРОЖНЯ КАРТА ПЕРЕСЕЛЕНЦЯ</h1>
+        <h4>(м. Рівне, Рівненська область)</h4>
+      </div>
+
+      {active.length === 0 && <Partners />}
+
       {active.length === 0 && (
-        <div>
-          <span className="search__text">Пошук: </span>
-          <input className="search__input" onChange={handleChange} type="text" />
+        <div className="search__container slide-up">
+          <span className="search__text">Пошук:</span>
+          <input
+            className="search__input"
+            onChange={handleChange}
+            type="text"
+            placeholder="Введіть ключове слово для пошуку..."
+          />
         </div>
       )}
-      <div
-        className="App__container"
-        style={(active.length) ? (((window.innerWidth > 1024)) ? {height: "min-content", width: "800px"} : {}) : {}}
-      >
-        {items.map( item =>
+
+      <div className={`App__container ${active.length > 0 ? 'active' : ''}`}>
+        {items.map(item =>
           (active.length === 0 || active === item.title)
-          ? (
-            <Item
-              apartament={apartament}
-              setApartament={setApartament}
-              active={active}
-              setActive={setActive}
-              key={Math.random()}
-              item={item}
-            />
-          )
-          : null)
+            ? (
+              <Item
+                apartament={apartament}
+                setApartament={setApartament}
+                active={active}
+                setActive={setActive}
+                key={Math.random()}
+                item={item}
+              />
+            )
+            : null)
         }
       </div>
+
       <footer className='footer'>
+        <p>&copy; 2024 Дорожня карта переселенця. Рівне, Україна.</p>
       </footer>
     </div>
   );

@@ -1,136 +1,355 @@
-$bg-color: #ffe4c4;
-$blue: #60ade4;
-$light-blue: #e3f9fc;
+// Modern Color Palette
+$primary: #60ade4;
+$primary-dark: #4a9bc7;
+$primary-light: #e3f9fc;
+$secondary: #f8f9fa;
+$accent: #ff6b6b;
+$success: #51cf66;
+$warning: #ffd43b;
+$danger: #ff6b6b;
+
+// Text Colors
+$text-primary: #2c3e50;
+$text-secondary: #6c757d;
+$text-muted: #adb5bd;
+$text-white: #ffffff;
+
+// Background Colors
+$bg-primary: #ffffff;
+$bg-secondary: #f8f9fa;
+$bg-light: #e9ecef;
+$bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$bg-card: rgba(255, 255, 255, 0.95);
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+$gradient-secondary: linear-gradient(135deg, $primary-light 0%, $bg-primary 100%);
+$gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+// Spacing
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-2xl: 48px;
 
 .App {
-  display: block;
-  width: 95vw;
-  max-width: 1444px;
-  margin: 2.5vh auto;
-  min-height: 95vh;
-  box-sizing: border-box;
+  min-height: 100vh;
+  background: $bg-gradient;
   font-family: 'Open Sans', sans-serif;
-  font-family: 'Mariupol';
+  position: relative;
+  overflow-x: hidden;
 
+  // Mobile-first approach
+  padding: $space-md;
 
-  padding: 20px;
-  background-color: $bg-color;
-  text-align: center;
-  border-radius: 30px;
-
-  h1 {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    @media (max-width: 1024px)  {
-      font-size: 20px;
-    }
+  @media (min-width: 768px) {
+    padding: $space-lg;
   }
 
-  h4 {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0  0 20px 0;
-    padding: 0;
+  @media (min-width: 1024px) {
+    padding: $space-xl;
   }
 
-  @media (max-width: 1024px)  {
-    width: 100%;
-    border-radius: 0;
-    margin: 0 auto;
+  // Main container
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Glass morphism effect for larger screens
+  @media (min-width: 768px) {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: $radius-xl;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: $shadow-xl;
+    margin: $space-lg auto;
+    min-height: calc(100vh - #{$space-lg * 2});
   }
 
-
-
-  &__item {
-    padding: 20px;
-    background-color: $bg-color;
+  &__header {
     text-align: center;
-    border-radius: 3px;
-    border: #000000 1px solid;
+    margin-bottom: $space-xl;
+    padding: $space-lg 0;
+
+    // Hero section with modern design
+    background: $bg-card;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    @media (max-width: 767px) {
+      margin-bottom: $space-lg;
+      padding: $space-md 0;
+      border-radius: $radius-md;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 800;
+      margin: 0 0 $space-md 0;
+      background: $gradient-primary;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+
+      // Fallback for browsers that don't support background-clip
+      @supports not (-webkit-background-clip: text) {
+        color: $primary;
+      }
+    }
+
+    h4 {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 600;
+      color: $text-secondary;
+      margin: 0;
+      opacity: 0.9;
+      letter-spacing: 0.02em;
+    }
   }
 
+  // Container for service cards
   &__container {
-    display: flex;
-    flex-wrap: wrap;
-    height: 700px;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px auto 0;
-    gap: 20px;
+    display: grid;
+    gap: $space-md;
+    margin: $space-xl 0;
 
-    @media (max-width: 1280px)  {
-      height: 1200px;
+    // Mobile: single column
+    grid-template-columns: 1fr;
+
+    // Tablet: 2 columns
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $space-lg;
     }
 
-    @media (max-width: 1024px)  {
-      height: max-content;
-      gap: 10px;
-      margin: 10px auto 0;
+    // Desktop: 3 columns
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
     }
 
+    // Large desktop: 4 columns
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
+    // When item is active, show single column layout
+    &.active {
+      grid-template-columns: 1fr;
+      max-width: 800px;
+      margin: $space-xl auto;
+    }
+  }
+
+
+
+  // Service card buttons - completely redesigned
+  &__container {
     &__button {
-      width: 220px;
-      height: 220px;
-      background-color: $blue;
-      color: #ffffff;
-      text-shadow: 0 0 3px #000000, 0 0 3px #000000;
-
-      font-family: 'Open Sans', sans-serif;
-      font-size: 24px;
-      font-weight: 600;
-
-      min-height: 40px;
+      background: $bg-card;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: $radius-lg;
+      padding: $space-lg;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: $shadow-md;
+      backdrop-filter: blur(10px);
       position: relative;
+      overflow: hidden;
 
-      @media (min-width: 1024px)  {
-        box-shadow: 8px 8px 8px #979797;
+      // Mobile optimized sizing
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media (min-width: 768px) {
+        min-height: 160px;
+        padding: $space-xl;
       }
 
-
-      &__img {
-        display: block;
-        position: absolute;
-        top: 20px;
-        left: 60px;
-        width: 100px;
-        height: 100px;
-        opacity: 0.7;
+      @media (min-width: 1024px) {
+        min-height: 200px;
       }
 
-      &__text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 130px;
-        left: 10px;
-        width: 200px;
-        height: 100px;
-        font-size: 18px;
-      }
-
-      @media (max-width: 1024px)  {
-        width: 100%;
-        height: max-content;
-        min-height: 20px;
-        font-size: 18px;
-      }
-
-      border-radius: 10px;
-      border: 1px black solid;
-      transition-duration: 0.3s;
-
+      // Hover effects
       &:hover {
-        @media (min-width: 1024px)  {
-          transform: scale(1.2);
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: $shadow-lg;
+        border-color: $primary;
+
+        &::before {
+          opacity: 1;
         }
 
-        background-color: $light-blue;
-        border: 2px #dad5d5 solid;
+        .App__container__button__text {
+          color: $text-white;
+          transform: scale(1.05);
+        }
+      }
+
+      // Gradient overlay on hover
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $gradient-primary;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      // Active state
+      &:active {
+        transform: translateY(-2px) scale(1.01);
+      }
+
+
+      // Icon styling
+      &__img {
+        width: 48px;
+        height: 48px;
+        opacity: 0.8;
+        margin-bottom: $space-md;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+
+        @media (min-width: 768px) {
+          width: 64px;
+          height: 64px;
+        }
+
+        @media (min-width: 1024px) {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      // Text styling
+      &__text {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+        font-weight: 600;
+        color: $text-primary;
+        line-height: 1.3;
+        transition: all 0.3s ease;
         z-index: 1;
+        position: relative;
+
+        @media (max-width: 767px) {
+          font-size: 0.85rem;
+          line-height: 1.2;
+        }
       }
     }
+  }
+
+
+  // Content sections styling
+  &__text {
+    background: $bg-card;
+    border-radius: $radius-md;
+    padding: $space-lg;
+    margin: $space-lg 0;
+    box-shadow: $shadow-sm;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    &__text {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      line-height: 1.6;
+      color: $text-primary;
+      text-align: left;
+
+      p {
+        margin-bottom: $space-md;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Apartments/Details section
+  &__appartments {
+    background: $bg-card;
+    border-radius: $radius-lg;
+    padding: $space-lg;
+    margin: $space-md 0;
+    box-shadow: $shadow-md;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    @media (max-width: 767px) {
+      padding: $space-md;
+      border-radius: $radius-md;
+    }
+  }
+
+  // Button links styling
+  &__buttonLink {
+    background: $gradient-primary;
+    color: $text-white;
+    border: none;
+    border-radius: $radius-md;
+    padding: $space-md $space-lg;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: $shadow-sm;
+    margin: $space-xs;
+    width: calc(100% - #{$space-xs * 2});
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+      background: linear-gradient(135deg, $primary-dark 0%, $primary 100%);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+  }
+}
+
+// Buttons container
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  margin-top: $space-lg;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $space-md;
   }
 
   &__text {
@@ -167,7 +386,7 @@ $light-blue: #e3f9fc;
     }
 
 
-    background-color: $blue;
+    background-color: blue;
     border: 1px black solid;
     border-radius: 10px;
 
@@ -212,43 +431,139 @@ $light-blue: #e3f9fc;
 }
 
 .search {
+  &__container {
+    background: $bg-card;
+    border-radius: $radius-lg;
+    padding: $space-lg;
+    margin: $space-xl 0;
+    box-shadow: $shadow-md;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+
+    @media (max-width: 767px) {
+      padding: $space-md;
+      margin: $space-lg 0;
+      border-radius: $radius-md;
+    }
+  }
+
   &__input {
-    height: 18px;
-    width: 160px;
-    border-radius: 10px;
-    @media (min-width: 1024px)  {
-      height: 25px;
-      width: 220px;
-      box-shadow: 4px 4px 4px #bebebe;
+    width: 100%;
+    max-width: 400px;
+    height: 48px;
+    border-radius: $radius-xl;
+    border: 2px solid rgba(96, 173, 228, 0.3);
+    padding: 0 $space-lg;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-family: 'Open Sans', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    box-shadow: $shadow-sm;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba(96, 173, 228, 0.1), $shadow-md;
+      transform: translateY(-1px);
+      background: $bg-primary;
+    }
+
+    @media (max-width: 767px) {
+      height: 44px;
+      padding: 0 $space-md;
     }
   }
 
   &__text {
-    font-weight: 500;
-    font-size: 18px;
-    margin-right: 5px;
-    @media (min-width: 1024px)  {
-      font-weight: 600;
-      font-size: 20px;
-      margin-right: 10px;
-      text-shadow: 4px 4px 4px #bebebe;
-    }
+    font-weight: 600;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: $space-md;
+    color: $text-primary;
+    display: block;
   }
 }
 
 .footer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 20px;
+  margin-top: $space-2xl;
+  padding: $space-lg 0;
+  text-align: center;
+  color: $text-muted;
+  font-size: 0.85rem;
+
+  @media (max-width: 767px) {
+    margin-top: $space-xl;
+    padding: $space-md 0;
+  }
+}
+
+// Global styles
+* {
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  @media (min-width: 1024px) {
-    background-image: url("https://www.vinnitsa.info/f/images/2022/03/12/87265/846c300a15497dd49042f77ae6ae2819_preview_w440_h290.jpg");
-    background-position: center;
-    background-attachment:fixed;
+  padding: 0;
+  min-height: 100vh;
+  background: $bg-gradient;
+  color: $text-primary;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Improved mobile experience
+  @media (max-width: 767px) {
+    font-size: 14px;
   }
+}
+
+// Utility classes
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-sm { margin-bottom: $space-sm; }
+.mb-md { margin-bottom: $space-md; }
+.mb-lg { margin-bottom: $space-lg; }
+
+.p-sm { padding: $space-sm; }
+.p-md { padding: $space-md; }
+.p-lg { padding: $space-lg; }
+
+// Responsive utilities
+.mobile-only {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+// Animation utilities
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
 }
